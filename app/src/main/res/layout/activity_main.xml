@@ -6,13 +6,173 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameTextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Enter your name"
+        app:boxCornerRadiusBottomEnd="5dp"
+        app:boxCornerRadiusBottomStart="5dp"
+        app:boxCornerRadiusTopEnd="5dp"
+        app:boxCornerRadiusTopStart="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:ignore="KeyboardInaccessibleWidget" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fuelPriceTextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Enter fuel price"
+        app:boxCornerRadiusBottomEnd="5dp"
+        app:boxCornerRadiusBottomStart="5dp"
+        app:boxCornerRadiusTopEnd="5dp"
+        app:boxCornerRadiusTopStart="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fuelPriceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:ignore="KeyboardInaccessibleWidget" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/numberOfLettersTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="The name contains 0 symbols"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/fuelPriceTextInputLayout" />
+
+    <TextView
+        android:id="@+id/fuelPriceTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="Fuel price is 0.00 Eur"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/numberOfLettersTextView" />
+
+    <TextView
+        android:id="@+id/sumTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16sp"
+        android:layout_marginEnd="32dp"
+        android:text="Sum of symbols and fuel price is 0"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/fuelPriceTextView" />
+
+    <TextView
+        android:id="@+id/isSumPositiveTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="Is sum positive? "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/sumTextView" />
+
+    <TextView
+        android:id="@+id/firstLetterTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="First letter of the name is '_' "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/isSumPositiveTextView" />
+
+    <TextView
+        android:id="@+id/subtractTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="Result of subtraction 0"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/firstLetterTextView" />
+
+    <TextView
+        android:id="@+id/isStillPositiveTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="Is sum still positive?"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/subtractTextView" />
+
+    <TextView
+        android:id="@+id/letterIdPositiveTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="The id of '_' letter is 0 "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/fuelPriceTextInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/isStillPositiveTextView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/okButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="OK"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
